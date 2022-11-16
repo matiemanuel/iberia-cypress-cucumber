@@ -1,12 +1,13 @@
 class CookiesPopUp {
-    elements = {
-      acceptAllBtn: () => cy.get("#onetrust-accept-btn-handler")
-    };
-  
-    acceptAllCookies(origin) {
-      this.elements.acceptAllBtn().click();
-    }
+  elements = {
+    acceptAllBtn: () => cy.get("#onetrust-accept-btn-handler")
+  };
 
+  acceptAllCookies() {
+    this.elements.acceptAllBtn().click();
   }
+
+}
+
+module.exports = new CookiesPopUp();
   
-  module.exports = new CookiesPopUp();
