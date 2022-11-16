@@ -33,10 +33,6 @@ When("Date of departure is {int} days from today and return date {int} days afte
   homePage.selectDateFromCalendar(dateUtils.formatDateForCalendarLocator(desiredDate));
 })
 
-When("Return date is {int} days after departure", (daysAfter)=>{
-  homePage.selectReturnDay();
-})
-
 When("The user adds an adult and a child", () =>{
   homePage.openPassengerSelector();
   passengersSelector.addAnAdult()
