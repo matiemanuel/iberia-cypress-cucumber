@@ -1,0 +1,31 @@
+{
+  "name": "iberia-cypress-cucumber",
+  "version": "1.0.0",
+  "description": "Iberia's webapp automation POC using Cypress and BDD (Cucumber)",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open --browser chrome --e2e"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matiemanuel/iberia-cypress-cucumber.git"
+  },
+  "keywords": [
+    "cypress",
+    "cucumber",
+    "javascript"
+  ],
+  "author": "matiemanuel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matiemanuel/iberia-cypress-cucumber/issues"
+  },
+  "homepage": "https://github.com/matiemanuel/iberia-cypress-cucumber#readme",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^14.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
+    "cypress": "^11.0.1",
+    "esbuild": "^0.15.13",
+    "multiple-cucumber-html-reporter": "^3.0.1"
+  }
+}
