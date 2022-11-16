@@ -7,6 +7,7 @@ const homePage = require("../../pages/HomePage");
 const cookiesPopUp = require("../../pages/CookiesPopUp");
 const passengersSelector = require("../../pages/PassengersSelector");
 const searchResultsPage = require("../../pages/SearchResultsPage");
+const dateUtils = require("../../utils/DateUtils");
 
 Given("A web browser is at the Iberia home page", () => {
   cy.visit("/");
@@ -24,8 +25,14 @@ When("The user enters the destination {string}", (destination)=>{
   homePage.typeDestination(destination);
 })
 
-When("Date of departure is {int} days from now", (daysFromNow)=>{
-  homePage.selectDepartureDate();
+When("Date of departure is {int} days from today and return date {int} days after", (daysFromNow, daysFromDeparture)=>{
+  currentDate = dateUtils.today();
+  departureDate = dateUtils.addDaysToDate(currentDate, daysFromNow);
+  returnDate = dateUtils.addDaysToDate(departureDate, daysFromDeparture);
+  
+  homePage.openCalendarComponent();
+  homePage.selectDepartureDate(dateUtils.formatDateForCalendarLocator(departureDate));
+  homePage.selectReturnDay(dateUtils.formatDateForCalendarLocator(returnDate));
 })
 
 When("Return date is {int} days after departure", (daysAfter)=>{

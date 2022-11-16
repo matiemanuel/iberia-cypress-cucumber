@@ -9,8 +9,7 @@ Feature: Flight booking
     Scenario: Success flight booking
         When The user enters the origin "Barcelona"
         When The user enters the destination "Madrid"
-        When Date of departure is 4 days from now
-        When Return date is 3 days after departure
+        When Date of departure is 4 days from today and return date 3 days after
         When The user adds an adult and a child
         When Click on search flights
         Then The user is in search results page

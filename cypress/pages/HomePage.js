@@ -19,14 +19,17 @@ class HomePage {
       return this;
     }
 
-    selectDepartureDate(){
+    openCalendarComponent(){
       this.elements.departureDateInput().click();
-      cy.get(this.calendarIdLocator + " .actualDate-1_1_2022").click();
     }
 
-    selectReturnDay(){
+    selectDepartureDate(actualDateSelector){
+      cy.get(this.calendarIdLocator + " " + actualDateSelector).click();
+    }
+
+    selectReturnDay(actualDateSelector){
       this.elements.returnDateInput().click();
-      cy.get(this.calendarIdLocator + " .actualDate-1_1_2022").click();
+      cy.get(this.calendarIdLocator + " " + actualDateSelector).click();
     }
 
     openPassengerSelector(){
