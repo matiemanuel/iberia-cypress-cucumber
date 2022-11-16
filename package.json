@@ -4,7 +4,8 @@
   "description": "Iberia's webapp automation POC using Cypress and BDD (Cucumber)",
   "main": "index.js",
   "scripts": {
-    "test": "cypress open --browser chrome --e2e"
+    "test": "cypress open --browser chrome --e2e",
+    "html-report": "cypress run --spec cypress/e2e/features/flight_booking.feature --browser chrome --headed"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,7 @@
     "@badeball/cypress-cucumber-preprocessor": "^14.0.0",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
     "cypress": "^11.0.1",
-    "esbuild": "^0.15.13",
-    "multiple-cucumber-html-reporter": "^3.0.1"
+    "cypress-mochawesome-reporter": "^3.2.3",
+    "esbuild": "^0.15.13"
   }
 }
