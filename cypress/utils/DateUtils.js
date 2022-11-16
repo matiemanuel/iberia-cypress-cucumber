@@ -6,7 +6,6 @@ class DateUtils {
 
     addDaysToDate(currentDate, days){
         currentDate.setDate(currentDate.getDate()+days);
-        return currentDate;
     }
 
     formatDateForCalendarLocator(desiredDate) {

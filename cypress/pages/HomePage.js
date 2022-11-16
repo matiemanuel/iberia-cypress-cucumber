@@ -23,12 +23,7 @@ class HomePage {
       this.elements.departureDateInput().click();
     }
 
-    selectDepartureDate(actualDateSelector){
-      cy.get(this.calendarIdLocator + " " + actualDateSelector).click();
-    }
-
-    selectReturnDay(actualDateSelector){
-      this.elements.returnDateInput().click();
+    selectDateFromCalendar(actualDateSelector){
       cy.get(this.calendarIdLocator + " " + actualDateSelector).click();
     }
 

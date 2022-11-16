@@ -26,13 +26,11 @@ When("The user enters the destination {string}", (destination)=>{
 })
 
 When("Date of departure is {int} days from today and return date {int} days after", (daysFromNow, daysFromDeparture)=>{
-  currentDate = dateUtils.today();
-  departureDate = dateUtils.addDaysToDate(currentDate, daysFromNow);
-  returnDate = dateUtils.addDaysToDate(departureDate, daysFromDeparture);
-  
   homePage.openCalendarComponent();
-  homePage.selectDepartureDate(dateUtils.formatDateForCalendarLocator(departureDate));
-  homePage.selectReturnDay(dateUtils.formatDateForCalendarLocator(returnDate));
+  let desiredDate = dateUtils.addDaysToDate(dateUtils.today(), daysFromNow);
+  homePage.selectDateFromCalendar(dateUtils.formatDateForCalendarLocator(desiredDate));
+  dateUtils.addDaysToDate(desiredDate, daysFromDeparture);
+  homePage.selectDateFromCalendar(dateUtils.formatDateForCalendarLocator(desiredDate));
 })
 
 When("Return date is {int} days after departure", (daysAfter)=>{
